@@ -136,48 +136,48 @@ int __stdcall RawImage_IsBtn( unsigned int RawImage, BOOL enabled )
 	integer pCFrame_SetScale = 0
 	integer pCFrame_Show = 0
 	
-	integer CFrameBackType_ControlFrame = 0
-	integer CFrameBackType_ControlBackdrop = 1
-	integer CFrameBackType_ControlPushedBackdrop = 2
-	integer CFrameBackType_ControlDisabledBackdrop = 3
+	constant integer CFrameBackType_ControlFrame = 0
+	constant integer CFrameBackType_ControlBackdrop = 1
+	constant integer CFrameBackType_ControlPushedBackdrop = 2
+	constant integer CFrameBackType_ControlDisabledBackdrop = 3
 
-	integer	CFramePosition_TOP_LEFT = 0
-	integer	CFramePosition_TOP_CENTER = 1
-	integer	CFramePosition_TOP_RIGHT = 2
-	integer	CFramePosition_LEFT = 3
-	integer	CFramePosition_CENTER = 4
-	integer	CFramePosition_RIGHT = 5
-	integer	CFramePosition_BOTTOM_LEFT = 6
-	integer	CFramePosition_BOTTOM_CENTER = 7
-	integer	CFramePosition_BOTTOM_RIGHT = 8
+	constant integer	CFramePosition_TOP_LEFT = 0
+	constant integer	CFramePosition_TOP_CENTER = 1
+	constant integer	CFramePosition_TOP_RIGHT = 2
+	constant integer	CFramePosition_LEFT = 3
+	constant integer	CFramePosition_CENTER = 4
+	constant integer	CFramePosition_RIGHT = 5
+	constant integer	CFramePosition_BOTTOM_LEFT = 6
+	constant integer	CFramePosition_BOTTOM_CENTER = 7
+	constant integer	CFramePosition_BOTTOM_RIGHT = 8
 
-	integer	FRAMETYPE_FRAME = 0
-	integer	FRAMETYPE_BACKDROP = 1
-	integer	FRAMETYPE_ITEM = 2
-	integer	FRAMETYPE_POPUPMENU = 3
-	integer	FRAMETYPE_EDITBOX = 4
-	integer	FRAMETYPE_BUTTON = 5
-	integer	FRAMETYPE_TEXTBUTTON = 6
-	integer	FRAMETYPE_SPRITE = 7
-	integer	FRAMETYPE_HIGHLIGHT = 8
-	integer	FRAMETYPE_SCROLLBAR = 9
-	integer	FRAMETYPE_MODEL = 10
+	constant integer	FRAMETYPE_FRAME = 0
+	constant integer	FRAMETYPE_BACKDROP = 1
+	constant integer	FRAMETYPE_ITEM = 2
+	constant integer	FRAMETYPE_POPUPMENU = 3
+	constant integer	FRAMETYPE_EDITBOX = 4
+	constant integer	FRAMETYPE_BUTTON = 5
+	constant integer	FRAMETYPE_TEXTBUTTON = 6
+	constant integer	FRAMETYPE_SPRITE = 7
+	constant integer	FRAMETYPE_HIGHLIGHT = 8
+	constant integer	FRAMETYPE_SCROLLBAR = 9
+	constant integer	FRAMETYPE_MODEL = 10
 
-	integer FRAME_EVENT_PRESSED = 1
-	integer FRAME_MOUSE_ENTER = 2
-	integer FRAME_MOUSE_LEAVE = 3
-	integer FRAME_MOUSE_UP = 4
-	integer FRAME_MOUSE_DOWN = 5
-	integer FRAME_MOUSE_WHEEL = 6
-	integer FRAME_FOCUS_ENTER = FRAME_MOUSE_ENTER
-	integer FRAME_FOCUS_LEAVE = FRAME_MOUSE_LEAVE
-	integer FRAME_CHECKBOX_CHECKED = 7
-	integer FRAME_CHECKBOX_UNCHECKED = 8
-	integer FRAME_EDITBOX_TEXT_CHANGED = 9
-	integer FRAME_POPUPMENU_ITEM_CHANGE_START = 10
-	integer FRAME_POPUPMENU_ITEM_CHANGED = 11
-	integer FRAME_MOUSE_DOUBLECLICK = 12
-	integer FRAME_SPRITE_ANIM_UPDATE = 13
+	constant integer FRAME_EVENT_PRESSED = 1
+	constant integer FRAME_MOUSE_ENTER = 2
+	constant integer FRAME_MOUSE_LEAVE = 3
+	constant integer FRAME_MOUSE_UP = 4
+	constant integer FRAME_MOUSE_DOWN = 5
+	constant integer FRAME_MOUSE_WHEEL = 6
+	constant integer FRAME_FOCUS_ENTER = FRAME_MOUSE_ENTER
+	constant integer FRAME_FOCUS_LEAVE = FRAME_MOUSE_LEAVE
+	constant integer FRAME_CHECKBOX_CHECKED = 7
+	constant integer FRAME_CHECKBOX_UNCHECKED = 8
+	constant integer FRAME_EDITBOX_TEXT_CHANGED = 9
+	constant integer FRAME_POPUPMENU_ITEM_CHANGE_START = 10
+	constant integer FRAME_POPUPMENU_ITEM_CHANGED = 11
+	constant integer FRAME_MOUSE_DOUBLECLICK = 12
+	constant integer FRAME_SPRITE_ANIM_UPDATE = 13
 	
 ```		
 
@@ -368,7 +368,7 @@ function CFrame_GetFrameAddress takes integer pCframe returns integer
 	return 0
 endfunction
 
-function CFrame_StartCustomAnimate takes integer frame,integer anim_id returns nothing
+function CFrame_StartCustomAnimate takes integer pCframe,integer anim_id returns nothing
 	if pCFrame_StartCustomAnimate == 0 then
 		set pCFrame_StartCustomAnimate = GetModuleProcAddress(EXTRADLLNAME, "CFrame_StartCustomAnimate")
 	endif
